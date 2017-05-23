@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
 
 namespace battery_log
 {
@@ -12,8 +13,24 @@ namespace battery_log
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            SetContentView (Resource.Layout.Main);
+
+            // Declaring widget variables
+            Button pickDateButton = FindViewById<Button>(Resource.Id.pickDate);
+            TextView dateDisplay = FindViewById<TextView>(Resource.Id.dateDisplay);
+
+            pickDateButton.Click += (object sender, EventArgs e) =>
+            {
+                DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
+                {
+                    dateDisplay.Text = time.ToLongDateString();
+                });
+
+                frag.Show(FragmentManager, DatePickerFragment.TAG);                
+            };
+                        
         }
+        
     }
 }
 
