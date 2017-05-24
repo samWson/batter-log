@@ -5,7 +5,7 @@ using System;
 
 namespace battery_log
 {
-    [Activity(Label = "battery_log", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "@string/ApplicationName", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
