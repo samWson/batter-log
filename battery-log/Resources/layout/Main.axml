@@ -14,4 +14,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/pickDate" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/leftOrRight">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Left"
+            android:id="@+id/left" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:id="@+id/right" />
+    </RadioGroup>
+    <Button
+        android:text="Add Record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addRecord" />
 </LinearLayout>
