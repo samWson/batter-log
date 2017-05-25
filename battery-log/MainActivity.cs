@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using System;
+using System.Collections.Generic;
 
 namespace battery_log
 {
@@ -18,6 +19,12 @@ namespace battery_log
             // Declaring widget variables
             Button pickDateButton = FindViewById<Button>(Resource.Id.pickDate);
             TextView dateDisplay = FindViewById<TextView>(Resource.Id.dateDisplay);
+            RadioButton left = FindViewById<RadioButton>(Resource.Id.left);
+            RadioButton right = FindViewById<RadioButton>(Resource.Id.right);            
+            Button addRecord = FindViewById<Button>(Resource.Id.addRecord);
+
+            // A Dictionary to store created records with key=date, value=left/right
+            Dictionary<string, string> records = new Dictionary<string, string>();
 
             pickDateButton.Click += (object sender, EventArgs e) =>
             {
@@ -31,9 +38,30 @@ namespace battery_log
                 // Show the DatePicker
                 frag.Show(FragmentManager, DatePickerFragment.TAG);                
             };
-                        
+
+            addRecord.Click += (object sender, EventArgs e) =>
+            {
+                string selection = GetSelection(left, right);
+                // Add a new record from the picked date and selected radio buttons
+                records.Add(dateDisplay.Text, selection);
+            };                    
         }
-        
+
+        // Returns the radio button selection
+        private string GetSelection(RadioButton left, RadioButton right)
+        {
+            string selection = string.Empty;
+            if (left.Checked)
+            {
+                selection = "left";
+            }
+            else if (right.Checked)
+            {
+                selection = "right";
+            }
+
+            return selection;
+        }
     }
 }
 
