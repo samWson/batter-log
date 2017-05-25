@@ -21,11 +21,14 @@ namespace battery_log
 
             pickDateButton.Click += (object sender, EventArgs e) =>
             {
+                // Get a new DatePicker from the factory method
                 DatePickerFragment frag = DatePickerFragment.NewInstance(delegate (DateTime time)
                 {
+                    // Show the picked date
                     dateDisplay.Text = time.ToLongDateString();
                 });
 
+                // Show the DatePicker
                 frag.Show(FragmentManager, DatePickerFragment.TAG);                
             };
                         
