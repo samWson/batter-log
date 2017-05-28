@@ -13,13 +13,18 @@ using Android.Widget;
 namespace battery_log
 {
     [Activity(Label = "History")]
-    public class History : Activity
+    public class HistoryActivity : ListActivity
     {
+        
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
 
-            // Create your application here
+            // Get the records from the MainActivity
+            //var record = 
+
+            
         }
     }
 }

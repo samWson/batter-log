@@ -54,7 +54,7 @@ namespace battery_log
                 // Store the records Dictionary in the bundle
                 bundle.PutSerializable("records", (Java.IO.ISerializable)records);
 
-                var intent = new Intent(this, typeof(History));
+                var intent = new Intent(this, typeof(HistoryActivity));
                 StartActivity(intent);
             };
         }
