@@ -22,8 +22,7 @@ namespace battery_log
             TextView dateDisplay = FindViewById<TextView>(Resource.Id.dateDisplay);
             RadioButton left = FindViewById<RadioButton>(Resource.Id.left);
             RadioButton right = FindViewById<RadioButton>(Resource.Id.right);            
-            Button addRecord = FindViewById<Button>(Resource.Id.addRecord);
-            Button showHistory = FindViewById<Button>(Resource.Id.BtnShowHistory);
+            Button addRecord = FindViewById<Button>(Resource.Id.addRecord);            
 
             // A Dictionary to store created records with key=date, value=left/right
             Dictionary<string, string> records = new Dictionary<string, string>();
@@ -47,16 +46,7 @@ namespace battery_log
                 // Add a new record from the picked date and selected radio buttons
                 records.Add(dateDisplay.Text, selection);
             };
-
-            // Start a history activity showing previous entries
-            showHistory.Click += (object sender, EventArgs e) =>
-            {
-                // Store the records Dictionary in the bundle
-                bundle.PutSerializable("records", (Java.IO.ISerializable)records);
-
-                var intent = new Intent(this, typeof(HistoryActivity));
-                StartActivity(intent);
-            };
+            
         }
 
         // Returns the radio button selection

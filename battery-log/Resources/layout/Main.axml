@@ -35,9 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/addRecord" />
-    <Button
-        android:text="Show History"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/BtnShowHistory" />
+        android:id="@+id/historyArea"
+        android:layout_marginBottom="276.5dp" />
 </LinearLayout>

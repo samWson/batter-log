@@ -60,14 +60,14 @@ namespace battery_log
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050006
-			public const int BtnShowHistory = 2131034118;
-			
 			// aapt resource value: 0x7f050005
 			public const int addRecord = 2131034117;
 			
 			// aapt resource value: 0x7f050000
 			public const int dateDisplay = 2131034112;
+			
+			// aapt resource value: 0x7f050006
+			public const int historyArea = 2131034118;
 			
 			// aapt resource value: 0x7f050003
 			public const int left = 2131034115;
