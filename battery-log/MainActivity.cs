@@ -20,6 +20,7 @@ namespace battery_log
             // Declaring widget variables
             Button pickDateButton = FindViewById<Button>(Resource.Id.pickDate);
             TextView dateDisplay = FindViewById<TextView>(Resource.Id.dateDisplay);
+            TextView historyArea = FindViewById<TextView>(Resource.Id.historyArea);
             RadioButton left = FindViewById<RadioButton>(Resource.Id.left);
             RadioButton right = FindViewById<RadioButton>(Resource.Id.right);            
             Button addRecord = FindViewById<Button>(Resource.Id.addRecord);            
@@ -43,8 +44,14 @@ namespace battery_log
             addRecord.Click += (object sender, EventArgs e) =>
             {
                 string selection = GetSelection(left, right);
+                string date = dateDisplay.Text;
+
                 // Add a new record from the picked date and selected radio buttons
-                records.Add(dateDisplay.Text, selection);
+                records.Add(date, selection);
+
+                // Show the record in historyArea
+                historyArea.Text += date + "\t" + selection + "\n";
+
             };
             
         }
